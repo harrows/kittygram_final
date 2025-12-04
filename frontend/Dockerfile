@@ -1,11 +1,8 @@
-FROM node:18-bullseye as build
+FROM node:18-bullseye AS build
 
 WORKDIR /app
 
-# Используем зеркало npm
 COPY .npmrc ./
-
-# Копируем файлы зависимостей
 COPY package.json package-lock.json ./
 
 RUN npm install
@@ -13,3 +10,11 @@ RUN npm install
 COPY . .
 
 RUN npm run build
+
+FROM node:18-bullseye AS production
+
+WORKDIR /app
+
+COPY --from=build /app/build /app/build
+
+CMD ["bash"]
