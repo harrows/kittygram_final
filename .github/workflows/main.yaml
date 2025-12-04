@@ -30,9 +30,7 @@ jobs:
           flake8 backend
 
       - name: Run backend tests
-        run: |
-          cd backend
-          pytest -q
+        run: pytest
 
       - name: Set up Node
         uses: actions/setup-node@v4
