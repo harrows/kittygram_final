@@ -1,3 +1,26 @@
+![Kittygram CI/CD](https://github.com/harrows/kittygram_final/actions/workflows/main.yml/badge.svg)
+# Kittygram — сервис для публикации котиков
+
+Kittygram — это учебный проект из Яндекс Практикума.  
+Приложение позволяет пользователям публиковать фотографии котиков, указывать их достижения и просматривать котиков других пользователей.
+
+## Стек технологий
+
+- Python 3.11  
+- Django / Django REST Framework  
+- Postgres  
+- Docker / Docker Compose  
+- Nginx  
+- GitHub Actions (CI/CD)
+
+## Как развернуть проект
+
+1. Клонировать репозиторий:
+git clone https://github.com/harrows/kittygram_final.git
+2. Создать файл `.env` на основе `example/.env.example`.
+3. Запустить проект в Docker:
+    docker compose -f docker-compose.production.yml up -d
+
 #  Как работать с репозиторием финального задания
 
 ## Что нужно сделать
@@ -24,3 +47,6 @@ dockerhub_username: ваш_логин_на_докерхабе
 - Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
 - Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
 - В корне проекта есть файл `kittygram_workflow.yml`.
+
+## Автор
+Dmitrii (harrows)
